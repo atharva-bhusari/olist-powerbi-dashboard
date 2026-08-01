@@ -1,0 +1,11 @@
+[project]
+name = "olist-powerbi-dashboard"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "duckdb>=0.10",
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+]
