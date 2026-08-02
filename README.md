@@ -4,7 +4,8 @@ A Power BI dashboard over the Olist Brazilian e-commerce dataset (~100K orders),
 built on a star-schema data model. It answers five business questions spanning
 sales performance and supply-chain / delivery operations.
 
-> Status: **in progress** — scope + scaffold complete, data prep next.
+> Status: **complete** — data pipeline, Power BI model, DAX measures, and
+> three-page report all built and published.
 
 ## Problem
 
@@ -69,19 +70,39 @@ python src/prep_data.py
 
 ## DAX measures
 
-Documented in [`docs/dax_measures.md`](docs/dax_measures.md). _(added during modeling)_
+Documented in [`docs/dax_measures.md`](docs/dax_measures.md), including a
+validation section with ground-truth values computed independently in
+DuckDB to sanity-check every measure.
 
 ## Results
 
-_Key findings go here once the report is built — e.g. late-delivery rate, freight
-as % of revenue, top category._
+Across the full 2016–2018 dataset (~99K orders):
+
+| Metric | Value |
+|---|---|
+| Total revenue | R$13.59M |
+| Total orders | 98,666 |
+| Freight as % of revenue | 16.6% |
+| Avg actual delivery time | 12.5 days (vs. 24.4 days estimated) |
+| Late delivery rate | 7.9% |
+| Avg review score | 4.09 / 5 |
+
+The freight/delivery angle is the strongest finding: orders arrive **12
+days faster than promised on average**, which gives Olist headroom to
+tighten delivery estimates — and freight cost (see Page 3 below) varies
+sharply by seller state, pointing at specific regions driving shipping
+cost rather than an even distribution.
 
 ## Screenshots
 
-_Add exported PNGs from `screenshots/` here._
+**Page 1 — Executive overview**
+![Executive overview](screenshots/page1_overview.png)
 
-<!-- ![Overview](screenshots/overview.png) -->
-<!-- ![Delivery performance](screenshots/delivery.png) -->
+**Page 2 — Delivery performance**
+![Delivery performance](screenshots/page2_delivery_performance.png)
+
+**Page 3 — Freight & reviews**
+![Freight and reviews](screenshots/page3_freight_reviews.png)
 
 ## Tech stack
 
