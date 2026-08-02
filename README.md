@@ -48,6 +48,10 @@ erDiagram
     dim_orders      }o--|| dim_customers : customer_id
 ```
 
+As built in Power BI (Model view):
+
+![Model view](screenshots/model_view.png)
+
 See [`docs/data_dictionary.md`](docs/data_dictionary.md) for column definitions.
 
 ## How to reproduce
